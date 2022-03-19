@@ -286,6 +286,8 @@ class FireAnt(Ant):
         if self.armor - amount <= 0:
             for bee in self.place.bees[:]:
                 bee.reduce_armor(self.damage)
+        for bee in self.place.bees[:]:
+            bee.reduce_armor(amount)
         Ant.reduce_armor(self,amount)
 
         # END Problem 4
